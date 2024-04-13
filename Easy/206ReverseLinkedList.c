@@ -1,27 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-struct ListNode* reverseList(struct ListNode* head) {
-    struct ListNode* prev = NULL;
-    struct ListNode* curr = head;
-    struct ListNode* next = NULL;
-    
-    while (curr != NULL) {
-        next = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = next;
-    }
-    
-    return prev;
-}
-
-struct ListNode*(){
+typedef struct Node{
     int value; 
-    int * next.
+    int * next;
+}Node;
+
+
+int * createNode(int value){
+    Node * newnode = malloc(sizeof(Node));
+    if (newnode !=NULL){
+        newnode ->value = value; 
+        newnode->next = NULL;
+    }
+    return newnode;
 }
+
 int main(void){
+    Node * head = NULL;
+    head = createNode(1);
+    head->next = createNode(2);
 
-
+    printf("%d ->>>%d", head->value,head->next->value);
 }
